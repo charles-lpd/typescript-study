@@ -20,7 +20,8 @@ function makeCustomer<T extends User>(u: T): T {
 /**
  * 
  * 为什么报错?
- *  因为 extends 此时代表约束, T 中被约束必须包含 User类型 ，但不只有User类型 所以返回 T 类型报错
+ *  T extends User, T 是 User 的子类型， 代表 User 包含 T 但是 T 并不是只有 User
+ *  return 出的是 User 返回类型是T 所以报错
  */
 
 type User = {
