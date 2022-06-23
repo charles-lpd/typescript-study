@@ -18,4 +18,4 @@ type NonEmptyArray<T> = T[] & { 0: T }
 
 const a: NonEmptyArray<string> = [] // 将出现编译错误
 
-const b: NonEmptyArray<string> = ['123'] // 将出现编译错误
+const b: NonEmptyArray<string> = ['123'] 
