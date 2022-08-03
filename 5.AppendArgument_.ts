@@ -20,6 +20,8 @@ type GetParameters<T extends (...args: any) => any> = T extends (
 ) => any
   ? P
   : never
+
+  
 // 1. 约束 T 是个函数
 // 2. 判断 T 是否是 函数
 // 3. 成功则 返回 T 的函数返回类型 infer P 相当于推断出 T 的返回类型
