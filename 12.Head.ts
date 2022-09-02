@@ -8,9 +8,7 @@
 // type H2 = Head<[3, 2]> // 3
 
 
-type Head<T extends Array<any>> = T extends [] ? never : T[0] 
-
-
+type Head<T extends Array<any>> = T extends [] ? never : T[0]
 type H0 = Head<[]> // never
 type H1 = Head<[1]> // 1
 type H2 = Head<[3, 2]> // 3
