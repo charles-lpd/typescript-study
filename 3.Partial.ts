@@ -43,7 +43,7 @@ interface UserInfo {
   gender: string
   interest: string[]
 }
-// 定义工具 用于剔除 T 中的 U 返回 联合类型 ｜｜｜
+// 定义工具 用于剔除 T 中的 U 返回 联合类型
 type FilterTrue<T, U> = T extends U ? never : T
 
 // 用于遍历 K 不影响 可选和必选
