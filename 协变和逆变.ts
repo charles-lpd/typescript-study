@@ -44,6 +44,22 @@ type TTT = Dog extends Animal ? true : false
 animal = dog
 dog = animal
 
+/***
+ * 
+ * 
+ * 
+ */
+type Props = string | number | boolean
+type Props2 = string
+
+let props:Props = 0
+let props2:Props2 = ''
+props2 = props
+props = props2
+
+
+type P = Props extends Props2 ? true : false
+
 
 /***
  * 逆变
@@ -71,12 +87,12 @@ dog = animal
   * 
   * 
   */
-  class Animal {
+  class Animal2 {
     doAnimalThing() {
       console.log('do animal thing.')
     }
   }
-  class Dog extends Animal {
+  class Dog2 extends Animal2 {
     doDogThing() {
       console.log('do dog thing.')
     }
@@ -84,16 +100,16 @@ dog = animal
   type Co<V> = () => V;
 
   // Co<Dog> ≤ Co<Animal>
-  const animalFn: Co<Animal> = () => {
-    return new Animal();
+  const animalFn: Co<Animal2> = () => {
+    return new Animal2();
   }
   
-  const dogFn: Co<Dog> = () => {
-    return new Dog();
+  const dogFn: Co<Dog2> = () => {
+    return new Dog2();
   }
   
-  let a: Co<Animal> = dogFn; // ok，dogFn返回Dog，Dog本身就是Animal
-  let b: Co<Dog> = animalFn; // error，animalFn返回Animal，Animal不一定是Dog，有可能不会doDogThing
+  let a: Co<Animal2> = dogFn; // ok，dogFn返回Dog，Dog本身就是Animal
+  let b: Co<Dog2> = animalFn; // error，animalFn返回Animal，Animal不一定是Dog，有可能不会doDogThing
  
 
 
