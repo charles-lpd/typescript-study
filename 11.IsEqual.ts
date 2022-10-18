@@ -6,14 +6,14 @@
 // type E1 = IsEqual<{ a: 1 }, { a: 1 }> // true
 // type E2 = IsEqual<[1], []>; // false
 /***
- *  判断A===B and B === A 
+ *  判断A===B and B === A
  *  使用 [] 进行包裹
  *  否则联合类型的时候会会进行分发处理
  *  never 会直接返回 never
- * 
+ *
  */
-type IsEqual<A,B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false
-type E0 = IsEqual<1, 2>; // false
+type IsEqual<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false
+type E0 = IsEqual<1, 2> // false
 type E1 = IsEqual<{ a: string }, { a: string }> // true
-type E2 = IsEqual<[1], []>; // false
-type E3 = IsEqual<never, never>; // false
+type E2 = IsEqual<[1], []> // false
+type E3 = IsEqual<never, never> // true

@@ -41,7 +41,7 @@ let animal:Animal
 let dog:Dog
 type TTT = Dog extends Animal ? true : false
 
-animal = dog
+// animal = dog
 dog = animal
 
 /***
@@ -52,14 +52,23 @@ dog = animal
 type Props = string | number | boolean
 type Props2 = string
 
-let props:Props = 0
-let props2:Props2 = ''
-props2 = props
-props = props2
+// let props:Props = 0
+// let props2:Props2 = ''
+// props2 = props
+// props = props2
 
 
-type P = Props extends Props2 ? true : false
+type P = Props2 extends Props ? true : false
 
+
+type AAA ={
+  name:1
+  age:2
+}
+type BBB = {
+  name:2
+}
+type CCC = AAA extends BBB ? true : false
 
 /***
  * 逆变
